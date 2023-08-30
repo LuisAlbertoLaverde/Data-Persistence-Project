@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreUI : MonoBehaviour
 {
@@ -18,5 +19,4 @@ public class ScoreUI : MonoBehaviour
             row.score.text = scores[i].score.ToString();
         }
     }
-
 }

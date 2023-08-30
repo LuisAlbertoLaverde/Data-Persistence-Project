@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -27,4 +28,10 @@ public class ScoreManager : MonoBehaviour
         var json=JsonUtility.ToJson(sd);
         PlayerPrefs.SetString("scores", json);
     }
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+
 }
