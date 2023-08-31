@@ -8,7 +8,7 @@ public class ScoreUI : MonoBehaviour
     public ScoreManager scoreManager;
     void Start()
     {
-        scoreManager.AddScore(new Score("sub",9999));
+        scoreManager.AddScore(new Score(GlobalDataManager.Instance.playerName,110006));
 
         var scores = scoreManager.GetHighScores().ToArray();
         for (int i = 0; i < scores.Length; i++)

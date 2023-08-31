@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,23 +5,17 @@ using UnityEngine.SceneManagement;
 public class StartMenuManager : MonoBehaviour
 {
     public TextMeshProUGUI bestScore;
-    public TMP_InputField playerName;
+    public TMP_InputField playerNameInput;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        GlobalDataManager.Instance.playerName = playerNameInput.text;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    //public void ResetBestScore()
+    //{
+    //    GlobalDataManager.Instance.bestScore = 0;
+    //}
     public void LeaderboardGame()
     {
         SceneManager.LoadScene(2);

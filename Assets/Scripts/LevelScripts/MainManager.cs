@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ public class MainManager : MonoBehaviour
     public int LineCount = 6;
     public Rigidbody Ball;
 
+    public TextMeshProUGUI playerName;
+    public Text BestScore;
     public Text ScoreText;
     public GameObject GameOverText;
     
@@ -22,6 +25,9 @@ public class MainManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AddPlayerName();
+        Debug.Log("llamo al nombre");
+        AddBestScore();
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
@@ -61,7 +67,15 @@ public class MainManager : MonoBehaviour
             }
         }
     }
+    void AddPlayerName()
+    {
+        playerName.text = $"Player : {GlobalDataManager.Instance.playerName}";
+    }
 
+    void AddBestScore()
+    {
+        BestScore.text = $"Best Score : {GlobalDataManager.Instance.playerName} : {GlobalDataManager.Instance.bestScore}";
+    }
     void AddPoint(int point)
     {
         m_Points += point;
