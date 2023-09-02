@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartMenuManager : MonoBehaviour
+public class MainMenuOptions : MonoBehaviour
 {
     public TextMeshProUGUI bestScore;
     public TMP_InputField playerNameInput;

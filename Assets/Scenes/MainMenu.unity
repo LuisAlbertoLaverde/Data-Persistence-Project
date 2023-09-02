@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 387811057}
   - component: {fileID: 387811056}
   m_Layer: 5
-  m_Name: NamePlayer
+  m_Name: NamePlayerInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 640853264}
   - component: {fileID: 640853263}
   m_Layer: 5
-  m_Name: BestScore
+  m_Name: BestScoreTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 777287913}
   - component: {fileID: 777287912}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: QuitBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -754,7 +754,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 998121854}
-        m_TargetAssemblyTypeName: StartMenuManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenuOptions, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 916010910}
   - component: {fileID: 916010909}
   m_Layer: 5
-  m_Name: Leaderboard
+  m_Name: LeaderboardBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -887,7 +887,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 998121854}
-        m_TargetAssemblyTypeName: StartMenuManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenuOptions, Assembly-CSharp
         m_MethodName: LeaderboardGame
         m_Mode: 1
         m_Arguments:
@@ -1013,7 +1013,7 @@ GameObject:
   - component: {fileID: 998121853}
   - component: {fileID: 998121854}
   m_Layer: 0
-  m_Name: StartMenuManager
+  m_Name: MainMenuOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 1272468116}
   - component: {fileID: 1272468115}
   m_Layer: 5
-  m_Name: TextVersion
+  m_Name: TextVersionTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1472,7 +1472,7 @@ GameObject:
   - component: {fileID: 1418105189}
   - component: {fileID: 1418105188}
   m_Layer: 5
-  m_Name: TextAutor
+  m_Name: TextAutorTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 1570608907}
   - component: {fileID: 1570608909}
   m_Layer: 5
-  m_Name: Titulo
+  m_Name: TituloTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2387,7 +2387,7 @@ GameObject:
   - component: {fileID: 2108173060}
   - component: {fileID: 2108173059}
   m_Layer: 5
-  m_Name: StartButton
+  m_Name: StartBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2458,7 +2458,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 998121854}
-        m_TargetAssemblyTypeName: StartMenuManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenuOptions, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
