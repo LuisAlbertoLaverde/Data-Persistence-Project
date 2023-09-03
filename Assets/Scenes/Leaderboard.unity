@@ -810,9 +810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f56b9d2ac3b3d94eb53df93231373f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreData:
+  initialScoreData:
     scores: []
-  scoreManager: {fileID: 378243}
+  initialScoreManager: {fileID: 378243}
 --- !u!1 &1053012760
 GameObject:
   m_ObjectHideFlags: 0

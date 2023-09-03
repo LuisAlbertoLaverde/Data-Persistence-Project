@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 public class GlobalDataManager : MonoBehaviour
@@ -18,5 +17,4 @@ public class GlobalDataManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
 }

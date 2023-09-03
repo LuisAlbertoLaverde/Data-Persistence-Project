@@ -12,17 +12,12 @@ public class MainMenuOptions : MonoBehaviour
         GlobalDataManager.Instance.playerName = playerNameInput.text;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    //public void ResetBestScore()
-    //{
-    //    GlobalDataManager.Instance.bestScore = 0;
-    //}
     public void LeaderboardGame()
     {
         SceneManager.LoadScene(2);
     }
     public void QuitGame()
     {
-        Debug.Log("salir del juego");
         Application.Quit();
     }
 }

@@ -1,6 +1,5 @@
 using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ScoreUI : MonoBehaviour
 {
@@ -8,16 +7,14 @@ public class ScoreUI : MonoBehaviour
     public ScoreManager scoreManager;
     public Transform rowContainer; // Referencia al contenedor de las filas en la UI
 
+    void Start()
+    {
+        // Llama a UpdateUI() al inicio para mostrar los puntajes iniciales
+        UpdateUI();
+    }
     // Llama a este método para actualizar la UI con los datos de scoreData
     void UpdateUI()
     {
-        // Elimina todas las filas existentes en el contenedor
-        foreach (Transform child in rowContainer.transform)
-        {
-            Destroy(child.gameObject);
-            Debug.Log("se esta eliminado las filas");
-        }
-
         var scores = scoreManager.GetHighScores().ToArray();
         for (int i = 0; i < scores.Length; i++)
         {
@@ -28,10 +25,14 @@ public class ScoreUI : MonoBehaviour
         }
     }
 
-    void Start()
+    void ClearUI()
     {
-        // Llama a UpdateUI() al inicio para mostrar los puntajes iniciales
-        UpdateUI();
+        // Elimina todas las filas existentes en el contenedor
+        foreach (Transform child in rowContainer.transform)
+        {
+            Destroy(child.gameObject);
+            Debug.Log("se esta eliminado las filas");
+        }
     }
 
     public void ResetScores()
@@ -39,10 +40,12 @@ public class ScoreUI : MonoBehaviour
         Debug.Log("reset Score se ha llamado");
         if (scoreManager != null)
         {
+            //Limpia la UI
+            ClearUI();
+            //Borra los puntajes y guarda los cambios
             scoreManager.ClearScores(); // Método que deberías crear en ScoreManager para borrar los puntajes
             scoreManager.SaveScore();
-
-            // Llama a UpdateUI() después de borrar los puntajes para actualizar la UI
+            // Actualiza la UI despues de borrar los puntajes para actualizar
             UpdateUI();
         }
     }
