@@ -11,7 +11,7 @@ public class MainManager : MonoBehaviour
 
     // Referencias a elementos de la interfaz de usuario
     public TextMeshProUGUI playerName;
-    public Text BestScore;
+    public TextMeshProUGUI BestScore;
     public Text ScoreText;
     public GameObject GameOverText;
 
@@ -111,9 +111,13 @@ public class MainManager : MonoBehaviour
     // Configura la mejor puntuación en la interfaz de usuario
     void AddBestScore()
     {
-        BestScore.text = $"Best Score : {GlobalDataManager.Instance.playerName} : {GlobalDataManager.Instance.bestScore}";
-    }
+        // Obten el nombre del mejor jugador y la mejor puntuación desde GlobalDataManager
+        string bestPlayerName = GlobalDataManager.Instance.bestPlayerName;
+        int bestScore = GlobalDataManager.Instance.bestScore;
 
+        // Actualiza el texto en BestScore
+        BestScore.text = $"Best Score : {bestPlayerName} : {bestScore}";
+    }
     // Agrega puntos al contador y actualiza la interfaz de usuario
     void AddPoint(int point)
     {
@@ -129,9 +133,16 @@ public class MainManager : MonoBehaviour
 
         // Guarda la puntuación del jugador y muestra el texto de fin de juego
         string playerName = GlobalDataManager.Instance.playerName;
-        float playerScore = this.playerScore;
-        scoreManager.AddScore(new Score(playerName, playerScore));
+        float localPlayerScore = this.playerScore;
+        scoreManager.AddScore(new Score(playerName, localPlayerScore));
         scoreManager.SaveScore();
         GameOverText.SetActive(true);
+
+        //Verifica si el nuevo puntaje es mayor que el mejor puntaje
+        if (localPlayerScore>GlobalDataManager.Instance.bestScore)
+        {
+            GlobalDataManager.Instance.bestScore = (int)localPlayerScore;
+            PlayerPrefs.SetFloat("BestScore", localPlayerScore);
+        }
     }
 }

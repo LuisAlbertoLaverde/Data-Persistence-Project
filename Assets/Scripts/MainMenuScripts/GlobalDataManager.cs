@@ -5,6 +5,7 @@ public class GlobalDataManager : MonoBehaviour
     public static GlobalDataManager Instance;
 
     public int bestScore;
+    public string bestPlayerName;
     public string playerName;
 
     private void Awake()
